@@ -6,54 +6,34 @@ import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
 
 const Menu = [
-  {
-    id: 1,
-    name: "Home",
-    link: "/#",
-  },
-  {
-    id: 2,
-    name: "Top Rated",
-    link: "/#services",
-  },
-  {
-    id: 3,
-    name: "Children's Clothing",
-    link: "/#",
-  },
-  {
-    id: 4,
-    name: "Men's Clothing",
-    link: "/#",
-  },
+  { id: 1, name: "Home", link: "#home" },
+  { id: 2, name: "Top Rated", link: "#services" },
+  { id: 3, name: "Children's Clothing", link: "#childrens-clothing" },
+  { id: 4, name: "Men's Clothing", link: "#mens-clothing" },
 ];
 
 const DropdownLinks = [
-  {
-    id: 1,
-    name: "Trending Products",
-    link: "/#",
-  },
-  {
-    id: 2,
-    name: "Best Selling",
-    link: "/#",
-  },
-  {
-    id: 3,
-    name: "Top Rated",
-    link: "/#",
-  },
+  { id: 1, name: "Trending Products", link: "#trending-products" },
+  { id: 2, name: "Best Selling", link: "#best-selling" },
+  { id: 3, name: "Top Rated", link: "#top-rated" },
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
       <div className="bg-primary/40 py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
+            <a href="#home" className="font-bold text-2xl sm:text-3xl flex gap-2" onClick={(e) => handleScroll(e, "home")}>
               <img src={Logo} alt="Logo" className="w-10" />
               E-Commerce
             </a>
@@ -96,6 +76,7 @@ const Navbar = ({ handleOrderPopup }) => {
             <li key={data.id}>
               <a
                 href={data.link}
+                onClick={(e) => handleScroll(e, data.link.substring(1))}
                 className="inline-block px-4 hover:text-primary duration-200"
               >
                 {data.name}
@@ -105,7 +86,7 @@ const Navbar = ({ handleOrderPopup }) => {
 
           {/* Simple Dropdown and Links */}
           <li className="group relative cursor-pointer">
-            <a href="#" className="flex items-center gap-[2px] py-2">
+            <a href="#trending-products" className="flex items-center gap-[2px] py-2" onClick={(e) => handleScroll(e, "trending-products")}>
               Trending Products
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
@@ -117,6 +98,7 @@ const Navbar = ({ handleOrderPopup }) => {
                   <li key={data.id}>
                     <a
                       href={data.link}
+                      onClick={(e) => handleScroll(e, data.link.substring(1))}
                       className="inline-block w-full rounded-md p-2 hover:bg-primary/20"
                     >
                       {data.name}

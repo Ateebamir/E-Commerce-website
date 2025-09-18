@@ -30,14 +30,46 @@ const App = () => {
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
       <Navbar handleOrderPopup={handleOrderPopup} />
-      <Hero handleOrderPopup={handleOrderPopup} />
-      <Products />
-      <TopProducts handleOrderPopup={handleOrderPopup} />
-      <Banner />
-      <Subscribe />
-      <Products />
-      <Testimonials />
+      
+      {/* Hero section as Home */}
+      <section id="home">
+        <Hero handleOrderPopup={handleOrderPopup} />
+      </section>
+      
+      {/* Products section */}
+      <section id="childrens-clothing">
+        <Products />
+      </section>
+
+      {/* Top Products section */}
+      <section id="services">
+        <TopProducts handleOrderPopup={handleOrderPopup} />
+      </section>
+
+      {/* Banner */}
+      <section id="banner">
+        <Banner />
+      </section>
+
+      {/* Subscribe */}
+      <section id="subscribe">
+        <Subscribe />
+      </section>
+
+      {/* Repeated Products? */}
+      <section id="mens-clothing">
+        <Products />
+      </section>
+
+      {/* Testimonials */}
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
+      {/* Footer */}
       <Footer />
+
+      {/* Popup */}
       <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
     </div>
   );
