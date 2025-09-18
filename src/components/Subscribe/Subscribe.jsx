@@ -20,13 +20,17 @@ const Subscribe = () => {
       <div className="container backdrop-blur-sm py-10">
         <div className="space-y-6 max-w-xl mx-auto">
           <h1 className="text-2xl !text-center sm:text-left sm:text-4xl font-semibold">
-            Get Notified About New Products
+            Stay Updated with Our Latest Products
           </h1>
+          <p className="text-center sm:text-left text-sm text-gray-200">
+            Subscribe now and be the first to know about new arrivals, exclusive
+            offers, and special deals.
+          </p>
           <input
             data-aos="fade-up"
             type="text"
-            placeholder="Enter your email"
-            className="w-full p-3"
+            placeholder="Enter your email address"
+            className="w-full p-3 rounded-md text-black"
           />
         </div>
       </div>

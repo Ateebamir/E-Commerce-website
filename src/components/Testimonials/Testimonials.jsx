@@ -5,25 +5,25 @@ const TestimonialData = [
   {
     id: 1,
     name: "Victor",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "The quality of products exceeded my expectations. Fast delivery and excellent customer service made my shopping experience amazing!",
     img: "https://picsum.photos/101/101",
   },
   {
     id: 2,
     name: "Satya Nadella",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "A seamless shopping journey — from browsing to checkout. The designs are trendy and the comfort is unmatched.",
     img: "https://picsum.photos/102/102",
   },
   {
     id: 3,
     name: "Virat Kohli",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "I was impressed with the variety and quality. Definitely my go-to store for both casual and formal wear.",
     img: "https://picsum.photos/104/104",
   },
   {
     id: 5,
     name: "Sachin Tendulkar",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
+    text: "Affordable prices without compromising on quality. I highly recommend this store to anyone who values style and comfort.",
     img: "https://picsum.photos/103/103",
   },
 ];
@@ -79,8 +79,8 @@ const Testimonials = () => {
             Testimonials
           </h1>
           <p data-aos="fade-up" className="text-xs text-gray-400">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-            asperiores modi Sit asperiores modi
+            Real experiences from our happy customers — their trust inspires us
+            to keep delivering the best.
           </p>
         </div>
 
@@ -88,15 +88,14 @@ const Testimonials = () => {
         <div data-aos="zoom-in">
           <Slider {...settings}>
             {TestimonialData.map((data) => (
-              <div className="my-6">
+              <div key={data.id} className="my-6">
                 <div
-                  key={data.id}
                   className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative"
                 >
                   <div className="mb-4">
                     <img
                       src={data.img}
-                      alt=""
+                      alt={data.name}
                       className="rounded-full w-20 h-20"
                     />
                   </div>

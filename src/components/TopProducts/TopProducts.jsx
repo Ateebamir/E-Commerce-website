@@ -10,23 +10,24 @@ const ProductsData = [
     img: Img1,
     title: "Casual Wear",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Comfortable and stylish everyday wear, designed to keep you looking sharp while feeling relaxed.",
   },
   {
     id: 2,
     img: Img2,
-    title: "Printed shirt",
+    title: "Printed Shirt",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Trendy printed shirt with a modern fit — perfect for casual outings and adding style to your wardrobe.",
   },
   {
     id: 3,
     img: Img3,
-    title: "Women shirt",
+    title: "Women Shirt",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Elegant and versatile women’s shirt crafted with premium fabric for both comfort and confidence.",
   },
 ];
+
 const TopProducts = ({ handleOrderPopup }) => {
   return (
     <div>
@@ -34,20 +35,21 @@ const TopProducts = ({ handleOrderPopup }) => {
         {/* Header section */}
         <div className="text-left mb-24">
           <p data-aos="fade-up" className="text-sm text-primary">
-            Top Rated Products for you
+            Top Rated Products for You
           </p>
           <h1 data-aos="fade-up" className="text-3xl font-bold">
             Best Products
           </h1>
           <p data-aos="fade-up" className="text-xs text-gray-400">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-            asperiores modi Sit asperiores modi
+            Discover our most popular picks — quality, comfort, and style loved
+            by our customers.
           </p>
         </div>
         {/* Body section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 md:gap-5 place-items-center">
           {ProductsData.map((data) => (
             <div
+              key={data.id}
               data-aos="zoom-in"
               className="rounded-2xl bg-white dark:bg-gray-800 hover:bg-black/80 dark:hover:bg-primary hover:text-white relative shadow-xl duration-300 group max-w-[300px]"
             >
@@ -55,7 +57,7 @@ const TopProducts = ({ handleOrderPopup }) => {
               <div className="h-[100px]">
                 <img
                   src={data.img}
-                  alt=""
+                  alt={data.title}
                   className="max-w-[140px] block mx-auto transform -translate-y-20 group-hover:scale-105 duration-300 drop-shadow-md"
                 />
               </div>

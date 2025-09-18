@@ -11,13 +11,13 @@ const ProductsData = [
     img: Img1,
     title: "Women Ethnic",
     rating: 5.0,
-    color: "white",
+    color: "White",
     aosDelay: "0",
   },
   {
     id: 2,
     img: Img2,
-    title: "Women western",
+    title: "Women Western",
     rating: 4.5,
     color: "Red",
     aosDelay: "200",
@@ -27,7 +27,7 @@ const ProductsData = [
     img: Img3,
     title: "Goggles",
     rating: 4.7,
-    color: "brown",
+    color: "Brown",
     aosDelay: "400",
   },
   {
@@ -41,7 +41,7 @@ const ProductsData = [
   {
     id: 5,
     img: Img2,
-    title: "Fashin T-Shirt",
+    title: "Fashion T-Shirt",
     rating: 4.5,
     color: "Pink",
     aosDelay: "800",
@@ -55,14 +55,13 @@ const Products = () => {
         {/* Header section */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">
           <p data-aos="fade-up" className="text-sm text-primary">
-            Top Selling Products for you
+            Top Selling Products for You
           </p>
           <h1 data-aos="fade-up" className="text-3xl font-bold">
             Products
           </h1>
           <p data-aos="fade-up" className="text-xs text-gray-400">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit
-            asperiores modi Sit asperiores modi
+            Explore our latest collection of top-selling products — stylish, comfortable, and made just for you.
           </p>
         </div>
         {/* Body section */}
@@ -78,7 +77,7 @@ const Products = () => {
               >
                 <img
                   src={data.img}
-                  alt=""
+                  alt={data.title}
                   className="h-[220px] w-[150px] object-cover rounded-md"
                 />
                 <div>
@@ -95,7 +94,7 @@ const Products = () => {
           {/* view all button */}
           <div className="flex justify-center">
             <button className="text-center mt-10 cursor-pointer bg-primary text-white py-1 px-5 rounded-md">
-              View All Button
+              View All Products
             </button>
           </div>
         </div>
